@@ -52,6 +52,7 @@ Running the game
 
 ```./cub3d maps/example.cub```
 
+
 Example .cub map file format
 
 ```NO ./textures/wall_north.xpm```
@@ -74,7 +75,8 @@ Example .cub map file format
 
 ```111111```
 
-**Controls**
+
+##Controls
 
 **W / Z:** Move forward
 
@@ -94,7 +96,7 @@ Example .cub map file format
 
 **Mouse Wheel:** Zoom in and out into the minimap
 
-**Project Structure**
+##Project Structure
 
 ```cub3d/```
 
@@ -116,7 +118,7 @@ Example .cub map file format
 
 ```└── README.md```
 
-**Map Testing Script**
+##Map Testing Script
 
 To facilitate testing multiple map files easily, a shell script is provided:
 
@@ -134,6 +136,6 @@ To facilitate testing multiple map files easily, a shell script is provided:
 
 Use this script regularly during development to ensure robustness across various map designs.
 
-**Authors**
+##Authors
 
 @sbehar and @ltcherep
