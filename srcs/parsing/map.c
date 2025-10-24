@@ -1,0 +1,85 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   map.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tcherepoff <tcherepoff@student.42.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/10 01:58:54 by tcherepoff        #+#    #+#             */
+/*   Updated: 2025/10/16 00:07:56 by tcherepoff       ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "cub.h"
+
+void	ft_add_to_map(char *line, t_list **list_tmp, t_parsing *pars)
+{
+	t_list	*new_content;
+	char	*copy;
+
+	if (!list_tmp || line == 0)
+		return ;
+	if (pars->map != NULL)
+		return (ft_print("two times a map ... are you serious !!!"));
+	if (strcmp(line, "1") != 0)
+	{
+		copy = ft_strdup(line);
+		new_content = ft_lstnew(copy);
+		if (!new_content)
+			return ;
+		if (ft_strlen(new_content->content) > pars->size_line)
+			pars->size_line = ft_strlen(new_content->content);
+		if (!*list_tmp)
+			*list_tmp = new_content;
+		else
+			ft_lstadd_back(list_tmp, new_content);
+	}
+}
+
+int	ft_conform_map(char **tmp)
+{
+	int	i;
+
+	i = 0;
+	while (tmp && tmp[i])
+	{
+		if (ft_good_characters(tmp[i]) == -1 || ft_checker_wall(tmp) == -1)
+			return (-1);
+		i++;
+	}
+	if (i != ft_size_tab(tmp))
+	{
+		ft_print("there is an empty line in the map ");
+		return (-1);
+	}
+	return (GOOD);
+}
+
+int	ft_check_wall_top(char *line)
+{
+	int	i;
+
+	i = 0;
+	if (!line || !*line)
+		return (-1);
+	while (line[i])
+	{
+		if (line[i] != '1' && line[i] != ' ')
+			return (-1);
+		i++;
+	}
+	return (0);
+}
+
+void	ft_move_player(t_value *value, double delta_x, double delta_y)
+{
+	double	nx;
+	double	ny;
+
+	nx = value->player->pos.x + delta_x;
+	ny = value->player->pos.y + delta_y;
+	if (value->parsing->map[(int)value->player->pos.y][(int)nx] != '1')
+		value->player->pos.x = nx;
+	if (value->parsing->map[(int)ny][(int)value->player->pos.x] != '1')
+		value->player->pos.y = ny;
+}
