@@ -55,6 +55,7 @@ Running the game
 Example .cub map file format
 
 ```NO ./textures/wall_north.xpm```
+
 ```SO ./textures/wall_south.xpm```
 ```WE ./textures/wall_west.xpm```
 ```EA ./textures/wall_east.xpm```
