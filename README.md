@@ -97,14 +97,23 @@ Example .cub map file format
 **Project Structure**
 
 ```cub3d/```
+
 ```├── extern_files/    # Extern library (mlx and libft)```
+
 ```├── includes/        # Header files```
+
 ```├── srcs/            # Source files (parsing, raycasting, rendering, events)```
+
 ```├── textures/        # Texture assets```
+
 ```├── maps/            # Map files (.cub) and tester```
+
 ```├── Makefile```
+
 ```├── main.c```
+
 ```├── en.subject.pdf   # Project subject```
+
 ```└── README.md```
 
 **Map Testing Script**
