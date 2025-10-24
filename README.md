@@ -38,6 +38,7 @@ This project aims to create a dynamic **3D view** inside a maze using the **rayc
 Clone the repository:
 
 ```git clone <your-repository-url>```
+
 ```cd cub3d```
 
 Build the project:
