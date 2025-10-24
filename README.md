@@ -51,7 +51,7 @@ Or to recompile everything
 
 Running the game
 
-```./cub3d maps/example.cub```
+```./cub3d maps/map.cub```
 
 ## Controls
 
