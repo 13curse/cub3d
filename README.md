@@ -52,30 +52,6 @@ Running the game
 
 ```./cub3d maps/example.cub```
 
-
-Example .cub map file format
-
-```NO ./textures/wall_north.xpm```
-
-```SO ./textures/wall_south.xpm```
-
-```WE ./textures/wall_west.xpm```
-
-```EA ./textures/wall_east.xpm```
-
-```F 220,100,0```
-
-```C 100,100,255```
-
-```111111```
-
-```100001```
-
-```1000N1```
-
-```111111```
-
-
 ## Controls
 
 **W / Z:** Move forward
@@ -136,6 +112,6 @@ To facilitate testing multiple map files easily, a shell script is provided:
 
 Use this script regularly during development to ensure robustness across various map designs.
 
-##Authors
+## Authors
 
 @sbehar and @ltcherep
